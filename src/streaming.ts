@@ -57,7 +57,7 @@ class OpenAIStreamParser<Raw, Nice> {
           const parsed = JSON.parse(content);
           this.onchunk?.(this.responseFactory(parsed));
         } catch (e) {
-          console.error('Failed parsing streamed JSON chunk ${content}', e);
+          console.error(`Failed parsing streamed JSON chunk ${content}`, e);
         }
       });
   }
